@@ -1,26 +1,22 @@
+import "../../data/tasks";
 import "../../styles/index.scss";
 
-function List() {
+function List({ tasksList }) {
   return (
-    <ul class="list">
-      <li>
-        <label for="task-id" className="list-item list-item--done">
-          <input id="task-id" type="checkbox" checked />
-          Ketchup
-        </label>
-      </li>
-      <li>
-        <label for="task-id" className="list-item">
-          <input id="task-id" type="checkbox" />
-          Pâtes
-        </label>
-      </li>
-      <li>
-        <label for="task-id" className="list-item">
-          <input id="task-id" type="checkbox" />
-          Salade
-        </label>
-      </li>
+    <ul className="list">
+      {tasksList.map((task) => {
+        return (
+          <li key={task.id}>
+            <label
+              for="`task-${task.id}`"
+              className="list-item list-item--done"
+            >
+              <input id="`task-${task.id}`" type="checkbox" checked />
+              {task.label}
+            </label>
+          </li>
+        );
+      })}
     </ul>
   );
 }

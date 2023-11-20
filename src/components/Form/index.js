@@ -1,9 +1,15 @@
 import "../../styles/index.scss";
 
-function Form() {
+function Form({ onChangeInput, taskInput }) {
   return (
-    <form class="form">
-      <input type="text" class="form-item" placeholder="Ajouter une tâche" />
+    <form className="form">
+      <input
+        type="text"
+        className="form-item"
+        placeholder="Ajouter une tâche"
+        value={taskInput}
+        onChange={onChangeInput}
+      />
     </form>
   );
 }
