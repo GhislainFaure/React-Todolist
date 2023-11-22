@@ -1,7 +1,7 @@
 import "../../styles/index.scss";
 
-function Counter() {
-  return <p className="counter">2 tâches en cours</p>;
+function Counter({ nbOfOnGoingTasks }) {
+  return <p className="counter">{nbOfOnGoingTasks} tâche(s) en cours</p>;
 }
 
 export default Counter;
